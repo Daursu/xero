@@ -1,0 +1,33 @@
+{
+    "name": "daursu/xero",
+    "description": "An elegant Laravel 4 wrapper for the official Xero API.",
+    "keywords": ["laravel","illuminate","xero","payroll"],
+    "license": "MIT",
+    "homepage": "www.softwareassistance.net",
+    "support": {
+        "email": "support@computerassistance.uk.com",
+        "forum": "www.computerassistance.uk.com"
+    },
+    "authors": [
+        {
+            "name": "Dan Ursu",
+            "email": "dan@computerassistance.uk.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Daursu\\Xero\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
