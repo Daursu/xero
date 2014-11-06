@@ -3,10 +3,10 @@
     "description": "An elegant Laravel 4 wrapper for the official Xero API.",
     "keywords": ["laravel","illuminate","xero","payroll"],
     "license": "MIT",
-    "homepage": "www.softwareassistance.net",
+    "homepage": "http://www.softwareassistance.net",
     "support": {
         "email": "support@computerassistance.uk.com",
-        "forum": "www.computerassistance.uk.com"
+        "forum": "http://www.computerassistance.uk.com"
     },
     "authors": [
         {
