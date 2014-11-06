@@ -1,5 +1,6 @@
 # Xero API wrapper for Laravel 4
 
+[![Latest Stable Version](https://poser.pugx.org/daursu/xero/v/stable.svg)](https://packagist.org/packages/daursu/xero) [![Total Downloads](https://poser.pugx.org/daursu/xero/downloads.svg)](https://packagist.org/packages/daursu/xero) [![Latest Unstable Version](https://poser.pugx.org/daursu/xero/v/unstable.svg)](https://packagist.org/packages/daursu/xero) [![License](https://poser.pugx.org/daursu/xero/license.svg)](https://packagist.org/packages/daursu/xero)
 
 This is a wrapper for the official Xero API php library, found at: https://github.com/XeroAPI/XeroOAuth-PHP
 
