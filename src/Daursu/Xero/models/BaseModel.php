@@ -1,6 +1,7 @@
-<?php namespace Daursu\Xero;
+<?php namespace Daursu\Xero\Models;
 
 use \XeroOAuth, \Log, \SimpleXMLElement, \Config;
+use \Daursu\Xero\Contracts\AccountsBaseModelInterface;
 
 class BaseModel implements AccountsBaseModelInterface {
 

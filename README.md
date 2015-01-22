@@ -54,8 +54,8 @@ The syntax is very simillar to the Laravel Eloquent one.
 
 ```php
 
-use \Daursu\Xero\Invoice;
-use \Daursu\Xero\Contact;
+use \Daursu\Xero\Models\Invoice;
+use \Daursu\Xero\Models\Contact;
 
 // Retrieve all the invoices
 $invoices = Invoice::get();
@@ -80,8 +80,8 @@ $contact = Contact::get(array('where' => 'Name.Contains("Dan")'));
 This is pretty straight forward as well.
 
 ```php
-use \Daursu\Xero\Invoice;
-use \Daursu\Xero\Contact;
+use \Daursu\Xero\Models\Invoice;
+use \Daursu\Xero\Models\Contact;
 
 // Initialize from an array
 $invoice = new Invoice(array(
@@ -118,8 +118,8 @@ print_r($invoice->toArray()); // should have all the properties populated once i
 Collections are used when you need to specify multiple relationships (ie. A contact might have multiple addresses.
 
 ```php
-use \Daursu\Xero\Contact;
-use \Daursu\Xero\Address;
+use \Daursu\Xero\Models\Contact;
+use \Daursu\Xero\Models\Address;
 
 $contact = new Contact;
 $contact->name = "John";
@@ -162,7 +162,7 @@ I have not implemented all the models that Xero provides, however it is very eas
 
 ```php
 // File CreditNote.php
-<?php namespace Daursu\Xero;
+<?php namespace Daursu\Xero\Models;
 
 class CreditNote extends BaseModel {
 
@@ -179,8 +179,8 @@ class CreditNote extends BaseModel {
 That's it. You can now use it:
 
 ```php
-use \Daursu\Xero\CreditNote;
-use \Daursu\Xero\Contact;
+use \Daursu\Xero\Models\CreditNote;
+use \Daursu\Xero\Models\Contact;
 
 $creditNote = new CreditNote();
 $creditNote->Type = 'ACCPAYCREDIT';
@@ -198,6 +198,7 @@ $collection->push($creditNote);
 
 ## Changelog
 
+Version 0.1.1 - Fix namespaces to adhere to PSR-0. Fixes certain autoload issues.
 Version 0.1 - Initial release
 
 ## License & Credits

@@ -1,4 +1,4 @@
-<?php namespace Daursu\Xero;
+<?php namespace Daursu\Xero\Contracts;
 
 interface AccountsBaseModelInterface {
 

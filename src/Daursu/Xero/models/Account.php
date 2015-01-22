@@ -1,4 +1,4 @@
-<?php namespace Daursu\Xero;
+<?php namespace Daursu\Xero\Models;
 
 class Account extends BaseModel {
 
