@@ -198,7 +198,7 @@ $collection->push($creditNote);
 
 ## Changelog
 
-* **Version 0.1.1** - Fix namespaces to adhere to PSR-0. Fixes certain autoload issues.
+* **Version 0.2** - Fix namespaces to adhere to PSR-0. Fixes certain autoload issues.
 * **Version 0.1** - Initial release
 
 ## License & Credits
