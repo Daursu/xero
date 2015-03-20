@@ -2,6 +2,7 @@
 
 use \XeroOAuth, \Log, \SimpleXMLElement, \Config;
 use \Daursu\Xero\Contracts\AccountsBaseModelInterface;
+use \Daursu\Xero\XeroGeneralException;
 
 class BaseModel implements AccountsBaseModelInterface {
 
