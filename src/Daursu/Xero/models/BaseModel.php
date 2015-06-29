@@ -3,6 +3,8 @@
 use \XeroOAuth, \Log, \SimpleXMLElement, \Config;
 use \Daursu\Xero\Contracts\AccountsBaseModelInterface;
 use \Daursu\Xero\XeroGeneralException;
+use \Daursu\Xero\InvalidXeroConfigurationException;
+
 
 class BaseModel implements AccountsBaseModelInterface {
 
