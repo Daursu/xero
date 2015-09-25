@@ -24,11 +24,12 @@ class Collection extends \Illuminate\Support\Collection {
 	 * @param string $type
 	 * @param array  $items
 	 */
-	public function __construct($type, $singular = '', $items = array())
+	public function __construct($type, $singular = '', $items = array(), $modelClassName)
 	{
 		$this->entity = $type;
 		$this->entity_singular = $singular ? : str_singular($type);
 		$this->setItems($items);
+		$this->modelClassName = $modelClassName;
 	}
 
 	/**
@@ -68,7 +69,7 @@ class Collection extends \Illuminate\Support\Collection {
 	 */
 	public function push($item)
 	{
-		$full_class_name = $this->getFullClassName();
+		$full_class_name = $this->modelClassName;
 
 		if (is_array($item)) {
 			array_push($this->items, new $full_class_name($item));
@@ -89,24 +90,13 @@ class Collection extends \Illuminate\Support\Collection {
 	}
 
 	/**
-	 * Retrieves the class of the objects in this collection
-	 * including the namespace
-	 *
-	 * @return string
-	 */
-	public function getFullClassName()
-	{
-		return __NAMESPACE__ . '\\' . $this->entity_singular;
-	}
-
-	/**
 	 * Return the singular form of the class name
 	 *
 	 * @return string
 	 */
 	public function getSingularEntityName()
 	{
-		$full_class_name = $this->getFullClassName();
+		$full_class_name = $this->modelClassName;
 		$temp = new $full_class_name;
 
 		return $temp->getSingularEntityName();
