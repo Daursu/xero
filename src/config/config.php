@@ -50,5 +50,23 @@ return array(
 	// 'curl_ssl_password' => '1234',
 	// 'curl_ssl_key'      => '/certs/entrust-private-RQ3.pem',
 
+	/*
+	|--------------------------------------------------------------------------
+	| Model aliases
+	|--------------------------------------------------------------------------
+	|
+	| If you've extended the library, then here you will need to define
+	| aliases for each model class you've created so that the library
+	| can autoload them correctly.
+	|
+	*/
+	'aliases' => array(
+		'Account'  => 'Daursu\Xero\Models\Account',
+		'Address'  => 'Daursu\Xero\Models\Address',
+		'Contact'  => 'Daursu\Xero\Models\Contact',
+		'Invoice'  => 'Daursu\Xero\Models\Invoice',
+		'LineItem' => 'Daursu\Xero\Models\LineItem',
+		'Payment'  => 'Daursu\Xero\Models\Payment',
+	),
 
 );

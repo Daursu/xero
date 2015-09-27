@@ -133,14 +133,20 @@ class BaseModel implements AccountsBaseModelInterface {
 	{
 		if (is_array($value)) {
 
-			$class = __NAMESPACE__ . '\\' . str_singular($key);
+			$key_in_singular = str_singular($key);
+
+			// Get the model class name based on the key
+			$class = $this->getModelClassName(
+				$key_in_singular,
+				__NAMESPACE__ . '\\' . $key_in_singular // fallback on the current namespace, if the alias is not defined in the config file.
+			);
 
 			if (class_exists($class)) {
 
 				// Check to see if the key value is plural or singular
 				// if it is plural then we create a collection
 				// otherwise we instantiate the class and add a single item to the relationship
-				if (str_singular($key) == $key) {
+				if ($key_in_singular == $key) {
 					$this->addRelationship(new $class($value));
 				}
 				else {
@@ -573,5 +579,22 @@ class BaseModel implements AccountsBaseModelInterface {
 		{
 			throw new XeroGeneralException('Error from Xero: ' . $response['response']);
 		}
+	}
+
+	/**
+	 * Get the full class name for a model.
+	 *
+	 * @param  string 	$name
+	 * @param  string 	$default
+	 * @return string
+	 */
+	protected function getModelClassName($name, $default = null)
+	{
+		$aliases = Config::get('xero::config.aliases', array());
+
+		if ( isset($aliases[$name]) )
+			return $aliases[$name];
+
+		return $default;
 	}
 }
