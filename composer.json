@@ -23,7 +23,8 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
+            "src/Daursu/Xero/lib"
         ],
         "psr-0": {
             "Daursu\\Xero\\": "src/"
