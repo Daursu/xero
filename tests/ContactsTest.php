@@ -1,10 +1,10 @@
 <?php
 
-use Daursu\Xero\Contact;
-use Daursu\Xero\Address;
-use Daursu\Xero\Collection;
+use Daursu\Xero\Models\Contact;
+use Daursu\Xero\Models\Address;
+use Daursu\Xero\Models\Collection;
 
-class ContactsTest extends TestCase {
+class ContactsTest extends PHPUnit_Framework_TestCase {
 
 	public function testCreateContact()
 	{

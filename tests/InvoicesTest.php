@@ -1,10 +1,10 @@
 <?php
 
-use Daursu\Xero\Invoice;
-use Daursu\Xero\Address;
-use Daursu\Xero\Collection;
+use Daursu\Xero\Models\Invoice;
+use Daursu\Xero\Models\Address;
+use Daursu\Xero\Models\Collection;
 
-class XeroInvoicesTest extends TestCase {
+class XeroInvoicesTest extends PHPUnit_Framework_TestCase {
 
 	public function testSetId()
 	{

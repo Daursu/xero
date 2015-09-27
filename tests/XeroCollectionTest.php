@@ -1,10 +1,10 @@
 <?php
 
-use Daursu\Xero\Contact;
-use Daursu\Xero\Address;
-use Daursu\Xero\Collection;
+use Daursu\Xero\Models\Contact;
+use Daursu\Xero\Models\Address;
+use Daursu\Xero\Models\Collection;
 
-class XeroCollectionTest extends TestCase {
+class XeroCollectionTest extends PHPUnit_Framework_TestCase {
 
 	public function testCollection()
 	{
