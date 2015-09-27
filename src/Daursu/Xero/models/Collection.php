@@ -19,15 +19,24 @@ class Collection extends \Illuminate\Support\Collection {
 	protected $entity_singular;
 
 	/**
+	 * The full class name of the model that
+	 * this collection is based on.
+	 *
+	 * @var string
+	 */
+	protected $model_class_name;
+
+	/**
 	 * Constructor function
 	 *
 	 * @param string $type
 	 * @param array  $items
 	 */
-	public function __construct($type, $singular = '', $items = array())
+	public function __construct($type, $model_class_name, $singular = '', $items = array())
 	{
 		$this->entity = $type;
-		$this->entity_singular = $singular ? : str_singular($type);
+		$this->entity_singular  = $singular ? : str_singular($type);
+		$this->model_class_name = $model_class_name;
 		$this->setItems($items);
 	}
 
@@ -68,7 +77,7 @@ class Collection extends \Illuminate\Support\Collection {
 	 */
 	public function push($item)
 	{
-		$full_class_name = $this->getFullClassName();
+		$full_class_name = $this->getModelClassName();
 
 		if (is_array($item)) {
 			array_push($this->items, new $full_class_name($item));
@@ -89,14 +98,13 @@ class Collection extends \Illuminate\Support\Collection {
 	}
 
 	/**
-	 * Retrieves the class of the objects in this collection
-	 * including the namespace
+	 * Retrieves the model class name.
 	 *
 	 * @return string
 	 */
-	public function getFullClassName()
+	public function getModelClassName()
 	{
-		return __NAMESPACE__ . '\\' . $this->entity_singular;
+		return $this->model_class_name;
 	}
 
 	/**
@@ -106,7 +114,7 @@ class Collection extends \Illuminate\Support\Collection {
 	 */
 	public function getSingularEntityName()
 	{
-		$full_class_name = $this->getFullClassName();
+		$full_class_name = $this->getModelClassName();
 		$temp = new $full_class_name;
 
 		return $temp->getSingularEntityName();

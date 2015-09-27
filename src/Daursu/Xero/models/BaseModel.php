@@ -422,7 +422,7 @@ class BaseModel implements AccountsBaseModelInterface {
 	 */
 	public static function newCollection(array $items = array())
 	{
-		return new Collection(self::getEntityName(), self::getSingularEntityName(), $items);
+		return new Collection(self::getEntityName(), get_called_class(), self::getSingularEntityName(), $items);
 	}
 
 	/**
