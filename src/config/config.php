@@ -67,6 +67,7 @@ return array(
 		'Invoice'  => 'Daursu\Xero\Models\Invoice',
 		'LineItem' => 'Daursu\Xero\Models\LineItem',
 		'Payment'  => 'Daursu\Xero\Models\Payment',
+		'Tracking' => 'Daursu\Xero\Models\Tracking',
 	),
 
 );

@@ -277,8 +277,8 @@ class BaseModel implements AccountsBaseModelInterface {
 	 */
 	public static function getEntityName()
 	{
-		if (isset(self::$entity))
-			return self::$entity;
+		if (isset(static::$entity))
+			return static::$entity;
 
 		return str_plural(class_basename(get_called_class()));
 	}
@@ -290,8 +290,8 @@ class BaseModel implements AccountsBaseModelInterface {
 	 */
 	public static function getSingularEntityName()
 	{
-		if ( isset(self::$entity_singular) && ! empty(self::$entity_singular))
-			return self::$entity_singular;
+		if ( isset(static::$entity_singular) && ! empty(static::$entity_singular))
+			return static::$entity_singular;
 
 		return str_singular(self::getEntityName());
 	}
